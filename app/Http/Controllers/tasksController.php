@@ -23,6 +23,7 @@ class tasksController extends Controller
         $request->validate([
             "title"=> "required|min:6",
         ]);
+
         $task = new Task();
         $task->title = $request->title;
         $task->category_id = $request->category_id;

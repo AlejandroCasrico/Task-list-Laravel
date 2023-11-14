@@ -38,7 +38,7 @@
                         </a>
                     </div>
                     <div class="col-md-3 d-flex justify-content-end">
-                         <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#modal-{{ $category->id }}">
+                         <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#modal-{{ $category->cate4gory }}">
                         Delete
                       </button>
                     </div>

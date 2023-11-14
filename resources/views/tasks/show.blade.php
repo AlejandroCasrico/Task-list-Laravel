@@ -1,7 +1,7 @@
 
 @extends('app')
 @section('content')
-    <div class="container w-25 border p-4 mt-5">
+    <div class="container w-25 border p-4 mt-5" style="background: white">
         <form action="{{ route('tasks-update', ['id' => $task->id]) }}" method="POST">
             @csrf
             @method('PUT')

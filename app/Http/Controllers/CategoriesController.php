@@ -47,6 +47,9 @@ class CategoriesController extends Controller
     public function show(string $id)
     {
         $category = Category::find($id);
+                if(!$category){
+                    abort(404);
+                }
         return view("categories.show", ["category"=> $category]);
     }
 
@@ -73,9 +76,9 @@ class CategoriesController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $category_id)
+    public function destroy(string $category)
     {
-        $category = Category::find($category_id);
+        $category = Category::find($category);
 
         if (!$category) {
             return redirect()->back()->with('error', 'Category not found');

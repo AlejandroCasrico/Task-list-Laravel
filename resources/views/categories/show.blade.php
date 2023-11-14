@@ -1,6 +1,6 @@
 @extends('app')
 @section('content')
-<div class="container w-25 border p-4 my-4">
+<div class="container w-25 border p-4 my-4" style="background-color: white">
     <div class='row mx-auto'>
         <form action="{{ route('categories.update',['category'=>$category->id]) }}" method="POST">
             @method('PUT')
@@ -22,24 +22,24 @@
                 @endphp
               <label for="category" class="form-label">Category</label>
               <input type="text" class="form-control" id="category" name="category"
-               placeholder="Category of the task" value="{{ $task->category->category }}">
+               placeholder="Category of the task" value="{{ $category->category }}">
             </div>
             <div class="mb-3">
               <label for="color" class="form-label">color</label>
               <input type="color" class="form-control" id="color" name="color" placeholder="Color of the task">
             </div>
-            <button type="submit" class="btn btn-primary">Create Category</button>
+            <button type="submit" class="btn btn-primary">Updare Category</button>
           </form>
           <div>
             @if ($category->tasks->count()>0)
             <div class="row py-1">
                 <div class="col-md-9 d-flex align-items-center">
-                    <a  href="{{ route('tasks-edit',[$task->id])}}">{{ $task->title }}
-                    </a>
+                    <a href="{{ route('tasks-edit', [$category->tasks[0]->id]) }}">{{ $category->tasks[0]->title }}</a>
+                </div>
                 </div>
 
                 <div class="col-md-3 d-flex justify-content-end">
-                    <form action="{{ route('task-destroy',[$task->id]) }}" method="POST">
+                    <form action="{{ route('tasks-destroy', [$category->tasks[0]->id]) }}" method="POST">
                         @method('DELETE')
                         @csrf
                         <button class="btn btn-danger btn-sm">Delete</button>

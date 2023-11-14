@@ -13,7 +13,7 @@
         margin: 0;
         padding: 0;
         font-family: sans-serif;
-        background-color: rgb(202, 173, 55);
+        background-image: url('{{ asset('images/wood.png') }}');
     }
     .color-container{
         width: 16px;
